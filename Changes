@@ -1,5 +1,21 @@
 Revision history for Dancer-Plugin-Test-Jasmine
 
 {{$NEXT}}
+ [API CHANGES]
 
-  - First version, unleashed on an unsuspecting world.
+ [BUG FIXES]
+
+ [DOCUMENTATION]
+
+ [ENHANCEMENTS]
+
+ [NEW FEATURES]
+
+ [STATISTICS]
+
+0.0.1 2015-04-01
+ - First version, unleashed on an unsuspecting world.
+
+ [STATISTICS]
+ - code churn: 4 files changed, 214 insertions(+), 6 deletions(-)
+
