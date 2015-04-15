@@ -8,6 +8,7 @@ Revision history for Dancer-Plugin-Test-Jasmine
  [DOCUMENTATION]
 
  [ENHANCEMENTS]
+ - Add 'jasmine-jquery', because it's awesome.
 
  [NEW FEATURES]
 
