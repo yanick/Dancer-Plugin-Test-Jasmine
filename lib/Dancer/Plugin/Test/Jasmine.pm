@@ -34,6 +34,9 @@ at the end of the head section of the page, and the tests at the end of its body
 To incorporate those tests to your Perl test suites, see
 L<Dancer::Plugin::Test::Jasmine::Results>.
 
+In addition to Jasmine itself, this plugin also load
+L<jasmine-jquery|https://github.com/velesin/jasmine-jquery>.
+
 =head1 CONFIGURATION PARAMETERS
 
 =over
@@ -198,6 +201,7 @@ sub _jasmine_includes {
         <script src="$prefix/lib/jasmine-html.js"></script>
         <script src="$prefix/lib/boot.js"></script>
         <script src="$prefix/lib/jasmine-jsreporter.js"></script>
+        <script src="$prefix/lib/jasmine-jquery.js"></script>
         <style>
             div.jasmine_html-reporter {
                 position:  absolute;
