@@ -1,0 +1,3 @@
+[submodule "jasmine-jquery"]
+	path = jasmine-jquery
+	url = gh:velesin/jasmine-jquery
