@@ -8,11 +8,17 @@ Revision history for Dancer-Plugin-Test-Jasmine
  [DOCUMENTATION]
 
  [ENHANCEMENTS]
- - Add 'jasmine-jquery', because it's awesome.
 
  [NEW FEATURES]
 
  [STATISTICS]
+
+0.1.0 2015-04-15
+ [ENHANCEMENTS]
+ - Add 'jasmine-jquery', because it's awesome.
+
+ [STATISTICS]
+ - code churn: 6 files changed, 864 insertions(+), 1 deletion(-)
 
 0.0.1 2015-04-01
  - First version, unleashed on an unsuspecting world.
