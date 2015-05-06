@@ -8,11 +8,17 @@ Revision history for Dancer-Plugin-Test-Jasmine
  [DOCUMENTATION]
 
  [ENHANCEMENTS]
- - Can add additional scripts and css stylesheets.
 
  [NEW FEATURES]
 
  [STATISTICS]
+
+0.2.0 2015-05-06
+ [ENHANCEMENTS]
+ - Can add additional scripts and css stylesheets.
+
+ [STATISTICS]
+ - code churn: 2 files changed, 46 insertions(+), 6 deletions(-)
 
 0.1.0 2015-04-15
  [ENHANCEMENTS]
