@@ -1,8 +1,0 @@
-^jasmine-jquery
-^dist.ini
-^MANIFEST.SKIP
-Dancer-Plugin-Test-Jasmine.*
-^\.gitignore
-^\.git
-^\.build
-
