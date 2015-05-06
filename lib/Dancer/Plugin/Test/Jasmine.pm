@@ -10,6 +10,10 @@ In F<config.yml>:
             specs_dir: t/specs
             prefix: /test
             lib_dir: /path/to/jasmine/dir
+            additional_scripts:
+                - /uri/to/script.js
+            additional_css:
+                - /usr/to/other.css
 
 In application:
 
@@ -55,6 +59,22 @@ specs files will be available . Defaults to C</test>.
 By default the plugin uses a version of Jasmine and its JSON reporter bundled
 in its share folder. If you prefer to use your own version of 
 Jasmine, you can specify its directory via this parameter.
+
+=item additional_scripts
+
+=item additional_css
+
+If specified, the plugin will include those scripts
+and css files in addition of (and after) the Jasmine stuff. The paths 
+are just the straight uris where to find those files.
+
+For example, to test an Angular application one can add:
+
+    plugins:
+        Test::Jasmine:
+            additional_scripts:
+                - /js/angular-mocks.js
+
 
 =back
 
@@ -170,6 +190,16 @@ has url_prefix => (
     },
 );
 
+for my $thing ( map { 'additional_' . $_ } qw/ scripts css / ) {
+    has $thing => (
+        is => 'ro',
+        lazy => 1,
+        default => sub {
+            plugin_setting->{$thing} || [];
+        },
+    );
+}
+
 my $plugin = __PACKAGE__->instance;
 
 hook before => sub {
@@ -197,11 +227,7 @@ sub _jasmine_includes {
 
     return <<"END";
         <link rel="stylesheet" href="$prefix/lib/jasmine.css">
-        <script src="$prefix/lib/jasmine.js"></script>e
-        <script src="$prefix/lib/jasmine-html.js"></script>
-        <script src="$prefix/lib/boot.js"></script>
-        <script src="$prefix/lib/jasmine-jsreporter.js"></script>
-        <script src="$prefix/lib/jasmine-jquery.js"></script>
+        @{[ map { sprintf "<link rel='stylesheet' href='$_'>" } @{ $plugin->additional_css } ]}
         <style>
             div.jasmine_html-reporter {
                 position:  absolute;
@@ -213,6 +239,13 @@ sub _jasmine_includes {
                 padding: 3em;
             }
         </style>
+
+        <script src="$prefix/lib/jasmine.js"></script>e
+        <script src="$prefix/lib/jasmine-html.js"></script>
+        <script src="$prefix/lib/boot.js"></script>
+        <script src="$prefix/lib/jasmine-jsreporter.js"></script>
+        <script src="$prefix/lib/jasmine-jquery.js"></script>
+        @{[ map { sprintf "<script src='$_'></script>" } @{ $plugin->additional_scripts } ]}
 END
 };
 

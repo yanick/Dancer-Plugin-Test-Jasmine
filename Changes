@@ -8,6 +8,7 @@ Revision history for Dancer-Plugin-Test-Jasmine
  [DOCUMENTATION]
 
  [ENHANCEMENTS]
+ - Can add additional scripts and css stylesheets.
 
  [NEW FEATURES]
 
